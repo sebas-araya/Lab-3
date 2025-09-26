@@ -1,9 +1,8 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 7
+#define SIZE 5
 
 int findLargestLine(int matrix[][SIZE], int n) {
 	int sum = 0;
@@ -22,12 +21,13 @@ int findLargestLine(int matrix[][SIZE], int n) {
 	for (j=0; j < n; j++) {
 		int sumaCol=0;
 		for (i=0; i < n; i++)
+			sumaCol+= matrix[i][j];
 		if (sumaCol != sum) return 0;
 	}
 
 	int sumaDiag1=0, sumaDiag2=0;
 	for(i=0; i<n; i++) {
-		sumaDiag1 += matrix[i][j];
+		sumaDiag1 += matrix[i][i];
 		sumaDiag2 += matrix[i][n -i -1];
 	}
 	if(sumaDiag1 != sum || sumaDiag2 != sum) return 0;

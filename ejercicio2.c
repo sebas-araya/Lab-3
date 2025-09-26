@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define SIZE 5
+#define SIZE 7
 
 int findLargestLine(int matrix[][SIZE], int n) {
 	int sum = 0;
